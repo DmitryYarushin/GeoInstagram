@@ -29,15 +29,15 @@ namespace InstaCrawler
 
                     foreach (var data in jObj["data"])
                     {
-                        var loc = data["location"].ToObject<Location>(); //ищем геометку
+                        var loc = data["location"].ToObject<Location>(); //смотрим, есть ли геометка и фото
                         totalPhoto++;
                         if (loc == null)
                         {
                             TotalPhotoProcessedChanged?.Invoke(totalPhoto,totalWithLoc);
-                            continue; // метки нет, пропускаем фото
+                            continue; // если метки нет, пропускаем фото
                         }
 
-                        var photo = data["images"].ToObject<InstaPhoto>(); //получаем ссылки на фото
+                        var photo = data["images"].ToObject<InstaPhoto>(); // если метка есть, получаем ссылки на фото
                         photo.Location = loc;
                         photos.Add(photo);
 
