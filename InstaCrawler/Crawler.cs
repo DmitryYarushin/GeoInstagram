@@ -10,7 +10,7 @@ namespace InstaCrawler
 {
     class Crawler
     {
-        private const string AccessToken = "1012096383.e029fea.120e679a5f7a40ba97069b4891ba3438";
+        private const string AccessToken = "1012096383.e029fea.120e679a5f7a40ba97069b4891ba3438"; //Писюны, сдающие после меня, меняем на свой токен @Димас  
 
         public List<InstaPhoto> Start(string tag, int count)
         {
